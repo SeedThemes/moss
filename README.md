@@ -1,3 +1,3 @@
 # moss
 
-Leaf: Mobile Only WordPress Theme.
+Moss: Mobile Only WordPress Theme.

@@ -136,20 +136,20 @@
 		"oAP": "/build/js",
 		"oF": 0
 		},
+	"/languages/moss.pot": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/languages/moss.pot",
+		"oF": 0
+		},
 	"/languages/readme.txt": {
 		"cB": 0,
 		"ft": 8192,
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/languages/readme.txt",
-		"oF": 0
-		},
-	"/languages/s-leaf.pot": {
-		"cB": 0,
-		"ft": 8192,
-		"hM": 0,
-		"oA": 0,
-		"oAP": "/languages/s-leaf.pot",
 		"oF": 0
 		},
 	"/LICENSE": {
@@ -297,7 +297,7 @@
 	},
 "projectAttributes": {
 	"creationDate": 605942410.91341805,
-	"displayValue": "s-leaf",
+	"displayValue": "moss",
 	"displayValueWasSetByUser": 0,
 	"iconImageName": "brackets-unblue",
 	"iconImageWasSetByUser": 0
@@ -2241,7 +2241,7 @@
 		"strictUnits": 0
 		},
 	"languageDefaultsMARKDOWN": {
-		"autoOutputAction": 0,
+		"autoOutputAction": 1,
 		"autoOutputPathFilenamePattern": "*.html",
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
@@ -2374,7 +2374,7 @@
 	"rollupExternals": "",
 	"rollupReplacements": "process.env.NODE_ENV:::$NODE_ENV,,,ENVIRONMENT:::$NODE_ENV",
 	"rollupTreeshakingEnabled": 1,
-	"skippedFoldersString": "/storage/framework/sessions,node_modules,_logs,logs,log,js,.idea,css,_cache,cache,css,js",
+	"skippedFoldersString": "/storage/framework/sessions,node_modules,_logs,logs,log,.idea,_cache,cache,js,scss",
 	"sourceFolderName": "source",
 	"susyVersion": 3,
 	"tsAllowSyntheticDefaultImports": 0,

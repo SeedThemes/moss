@@ -1,6 +1,6 @@
 <?php
 /**
- * Leaf Theme Customizer
+ * Moss Theme Customizer
  *
  * @package Moss
  */

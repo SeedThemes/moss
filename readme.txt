@@ -1,4 +1,4 @@
-=== Leaf ===
+=== Moss ===
 
 Contributors: seedthemes, automattic
 Tags: custom-background, custom-logo, featured-images, translation-ready
@@ -9,7 +9,7 @@ Stable tag: 0.1.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called Leaf.
+Mobile-Only WordPress Theme by SeedThemes.
 
 == Description ==
 
