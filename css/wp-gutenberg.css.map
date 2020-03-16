@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,CAAC,AAAC,CACA,eAAe,CAAE,IAAI,CACtB,AACD,AAAA,IAAI,CAAC,SAAS,AAAC,CACb,SAAS,CAAE,KAAK,CACjB",
+    "sources": [
+        "scss/wp-gutenberg.scss",
+        "scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "wp-gutenberg.css"
+}

@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,0BAA0B,CAC1B,mCAAmC,AAAC,CAClC,OAAO,CAAE,eAAe,CACzB,AACD,AAAA,mCAAmC,CAAC,oBAAoB,CAAG,gBAAgB,AAAC,CAC1E,UAAU,CAAE,IAAI,CACjB",
+    "sources": [
+        "scss/wp-admin.scss"
+    ],
+    "names": [],
+    "file": "wp-admin.css"
+}

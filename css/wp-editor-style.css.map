@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AACA,AAAA,IAAI,AAAA,QAAQ,AAAA,UAAU,AAAC,CACrB,WAAW,CAAE,UAAU,CACxB",
+    "sources": [
+        "scss/wp-editor-style.scss",
+        "scss/_variables.scss"
+    ],
+    "names": [],
+    "file": "wp-editor-style.css"
+}

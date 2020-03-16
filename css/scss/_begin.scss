@@ -1,0 +1,163 @@
+/* RESET */
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: sans-serif;
+  color: $text;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+blockquote {
+  margin: 0 0 1rem;
+  padding: 0;
+}
+ol,
+ul {
+  padding-left: 1em;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ETC */
+a {
+  text-decoration: none;
+  transition: 0.3s;
+  color: $primary;
+  &:hover {
+    color: $primary-hover;
+  }
+}
+figure {
+  margin: 0;
+}
+.screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+.screen-reader-text:focus {
+  clip: auto !important;
+  display: block;
+  height: auto;
+  left: 5px;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+}
+
+/* WORDPRESS */
+.alignright {
+  float: right;
+  margin-left: 1em;
+  margin-bottom: 1em;
+}
+.alignleft {
+  float: left;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+img.centered,
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+img.alignright {
+  display: inline;
+}
+img.alignleft {
+  display: inline;
+}
+.wp-caption {
+  margin-bottom: 1.5em;
+  max-width: 100%;
+}
+.wp-caption img[class*="wp-image-"] {
+  display: block;
+  margin: 0 auto;
+}
+.wp-caption-text {
+  text-align: center;
+}
+.wp-caption .wp-caption-text {
+  margin: 0.8em 0;
+}
+.gallery-caption {
+  display: block;
+}
+.sticky {
+  display: block;
+}
+.hentry li ul,
+.hentry li ol {
+  margin: 0.5em 0;
+}
+.updated:not(.published) {
+  display: none;
+}
+.bypostauthor {
+  background-color: #f8f5e7;
+}
+.page-links {
+  clear: both;
+  margin: 0 0 1.5em;
+}
+img.wp-smiley {
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
+}
+embed,
+iframe,
+object {
+  max-width: 100%;
+}
+.navigation {
+  clear: both;
+}
+.edit-link {
+  display: block;
+  margin: 10px 0;
+  a {
+    font-size: 13px;
+    background-color: #000;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 3px;
+    &:hover {
+      color: #fff;
+      background-color: $primary-hover;
+    }
+  }
+}
+
+/* GUTENBERG */
+.wp-block-quote {
+  border-left: 4px solid #000;
+  margin: 0 0 28px;
+  padding-left: 1em;
+}

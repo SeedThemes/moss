@@ -1,0 +1,32 @@
+/*!
+Theme Name: Moss
+Theme URI: https://seedthemes.com/moss/
+Author: SeedThemes
+Author URI: https://seedthemes.com/
+Description: Description
+Version: 0.1.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: moss
+Tags: custom-background, custom-logo, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Leaf is based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+
+*/
+
+/*
+===========================================
+
+This theme use SCSS, please check
+
+1. css/scss/_variables.scss - for some colors & styles.
+2. css/scss/mobile.scss - will be compiled to css/mobile.css and used for mobile version.
+3. css/scss/desktop.scss - will be compiled to css/desktop.css and used for desktop version.
+4. If you set $GLOBALS['s_style_css'] in functions.php to 'enable', you can add CSS to this file to override all CSS.
+    
+=========================================== 
+*/
