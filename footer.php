@@ -30,7 +30,13 @@
     <div class="site-qr-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_url( home_url( '/' ) ); ?></a></div>
 </div>
 
-<div class="site-credit">
+<?php
+$credit_class = '';
+if ( true == get_theme_mod( 'hide_seedthemes_credit', false ) ) {
+    $credit_class = '_hide';
+}
+?>
+<div class="site-credit <?php echo $credit_class; ?>">
     <?php _e('Proudly powered by', 'moss'); ?>
     <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'moss' ) ); ?>" target="_blank">
         <?php _e('WordPress', 'moss'); ?>

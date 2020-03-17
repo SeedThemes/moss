@@ -37,6 +37,14 @@ Kirki::add_field( 'moss', [
 	'section'     => 'title_tagline',
 	'default'     => '0',
 ] );
+Kirki::add_field( 'moss', [
+	'type'        => 'toggle',
+	'settings'    => 'hide_seedthemes_credit',
+	'label'       => esc_html__( 'Hide SeedThemes Credit?', 'moss' ),
+	'section'     => 'title_tagline',
+	'default'     => '0',
+	'priority'    => 100,
+] );
 
 
 

@@ -151,6 +151,9 @@ object {
     }
   }
 }
+._hide {
+  display: none !important;
+}
 
 /* GUTENBERG */
 .wp-block-quote {
