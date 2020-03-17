@@ -115,13 +115,13 @@ body.admin-bar {
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
   position: sticky;
-  top: -30px;
+  top: -20px;
   margin: 0 -20px;
   padding: 20px 20px 1px;
   display: flex;
   transition: 0.5s ease-out;
   z-index: 900;
-  height: 80px;
+  height: 70px;
   &.active {
     h1 {
       font-size: 1rem;
@@ -132,18 +132,30 @@ body.admin-bar {
     .custom-logo-link {
       padding-right: 8px;
       margin-top: -5px;
-      animation-name: mossTitle;
-      animation-duration: 0.4s;
+      margin-bottom: 5px;
     }
     .custom-logo {
       height: 24px;
+    }
+    .brand {
+      a {
+        transition: none;
+      }
+      h1,
+      .custom-logo-link,
+      .custom-logo {
+        animation: none;
+        animation-name: none;
+        animation-duration: 0s;
+        transition: 0.4s ease-out;
+      }
     }
   }
   h1 {
     font-size: 1.8em;
     margin: auto 0 0;
     padding-bottom: 16px;
-    transition: padding 0.5s ease-out, font-size 0.5s ease-out;
+    transition: 0.5s ease-out;
     line-height: 1.1;
     white-space: nowrap;
     overflow: hidden;
@@ -152,14 +164,40 @@ body.admin-bar {
   .brand {
     display: flex;
     margin: auto 0 0;
+    a {
+      transition: none;
+    }
+    h1,
+    .custom-logo-link,
+    .custom-logo {
+      animation: none;
+      animation-name: none;
+      animation-duration: 0s;
+      transition: 0.4s ease-out;
+    }
   }
   .custom-logo-link {
     padding-right: 10px;
     margin-top: -6px;
+    margin-bottom: 6px;
   }
   .custom-logo {
     height: 40px;
     width: auto;
+    transition: 0.3s;
+  }
+  &.-hide-title {
+    h1 {
+      display: none;
+    }
+    .custom-logo-link {
+      padding-right: 0;
+    }
+  }
+  &.-center {
+    .brand {
+      margin: auto auto 0;
+    }
   }
 }
 

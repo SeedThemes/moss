@@ -10,7 +10,7 @@
   flex-direction: column;
   position: absolute;
   left: calc(50% + 100px);
-  top: calc(50% - 30px);
+  top: calc(50% - 10px);
   transform: translateY(-50%);
   max-width: 320px;
   .icon {
@@ -21,8 +21,8 @@
     }
   }
   .site-title {
-    font-size: 2.4em;
-    margin-bottom: 5px;
+    font-size: 2.2em;
+    margin-bottom: 2px;
   }
 }
 .site-qr {
@@ -51,7 +51,7 @@
   color: $gray;
   position: fixed;
   right: 20px;
-  bottom: 16px;
+  bottom: 18px;
   a {
     &:hover {
       color: #000;

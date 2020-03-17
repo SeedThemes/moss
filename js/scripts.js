@@ -14,7 +14,7 @@ site_qr.appendChild(qr.domElement);
 /* Header on Scroll */
 let scrollpos = window.scrollY;
 const header = document.getElementById("top");
-const header_height = 30;
+const header_height = 20;
 const add_class_on_scroll = () => header.classList.add("active");
 const remove_class_on_scroll = () => header.classList.remove("active");
 
