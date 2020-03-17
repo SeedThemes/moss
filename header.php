@@ -24,9 +24,9 @@
     <div id="page" class="site">
         <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'moss' ); ?></a>
 
-        <div class="site-mobile">
+        <div id="swup" class="site-mobile">
             <header id="masthead" class="site-header">
                 <?php moss_menus(); ?>
             </header>
 
-            <div id="content" class="site-content">
+            <div id="content" class="site-content transition-slide">

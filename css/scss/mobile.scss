@@ -237,6 +237,25 @@ body.admin-bar {
   }
 }
 
+/* SWUP */
+.transition-fade {
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+.transition-slide {
+  opacity: 1;
+  transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+}
+html.is-animating {
+  .transition-fade {
+    opacity: 0;
+  }
+  .transition-slide {
+    opacity: 0;
+    transform: translate3d(0, 10px, 0);
+  }
+}
+
 .site-info,
 .site-credit {
   display: none;
