@@ -1,5 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-single'); ?>>
-    <header class="entry-header">
+    <header id="top" class="site-top entry-header">
         <?php moss_post_cat(); ?>
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </header>

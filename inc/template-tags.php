@@ -200,9 +200,11 @@ if ( ! function_exists( 'moss_site_brand' ) ) :
 		if ( true == get_theme_mod( 'title_align_center', false ) ) {
 			$classes .= ' -center';
 		}
-		echo '<header class="site-brand' . $classes . '">';
+		echo '<header id="top" class="site-top' . $classes . '">';
+		echo '<div class="brand">';
 		the_custom_logo();
 		echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '"  rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
+		echo '</div>';
 		echo '</header>';
 	}
 endif;
@@ -216,7 +218,7 @@ if ( ! function_exists( 'moss_site_header' ) ) :
 		if (is_front_page()) {
 			moss_site_brand();
 		} else {
-			echo '<header class="entry-header">';
+			echo '<header id="top" class="site-top entry-header">';
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			echo '</header>';
 		}

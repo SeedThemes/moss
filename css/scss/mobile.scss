@@ -93,6 +93,75 @@ body.admin-bar {
     padding-top: 3px;
   }
 }
+@keyframes mossTitle {
+  0% {
+    opacity: 1;
+    font-size: 1.8em;
+  }
+  30% {
+    opacity: 0;
+    font-size: 1.8em;
+  }
+  50% {
+    opacity: 0;
+    font-size: 1rem;
+  }
+  100% {
+    opacity: 1;
+    font-size: 1rem;
+  }
+}
+.site-top {
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: -30px;
+  margin: 0 -20px;
+  padding: 20px 20px 1px;
+  display: flex;
+  transition: 0.5s ease-out;
+  z-index: 900;
+  height: 80px;
+  &.active {
+    h1 {
+      font-size: 1rem;
+      padding-bottom: 14px;
+      animation-name: mossTitle;
+      animation-duration: 0.4s;
+    }
+    .custom-logo-link {
+      padding-right: 8px;
+      margin-top: -5px;
+      animation-name: mossTitle;
+      animation-duration: 0.4s;
+    }
+    .custom-logo {
+      height: 24px;
+    }
+  }
+  h1 {
+    font-size: 1.8em;
+    margin: auto 0 0;
+    padding-bottom: 16px;
+    transition: padding 0.5s ease-out, font-size 0.5s ease-out;
+    line-height: 1.1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .brand {
+    display: flex;
+    margin: auto 0 0;
+  }
+  .custom-logo-link {
+    padding-right: 10px;
+    margin-top: -6px;
+  }
+  .custom-logo {
+    height: 40px;
+    width: auto;
+  }
+}
 
 .content-item {
   margin-bottom: 20px;
