@@ -1,8 +1,60 @@
+@import "variables";
+
 .site-mobile {
   height: calc(100% - 40px);
   max-height: 850px;
+  left: calc(50% - 150px);
 }
 .site-info {
   display: flex;
   flex-direction: column;
+  position: absolute;
+  left: calc(50% + 100px);
+  top: calc(50% - 30px);
+  transform: translateY(-50%);
+  max-width: 320px;
+  .icon {
+    width: 64px;
+    margin-bottom: 15px;
+    img {
+      border-radius: 10px;
+    }
+  }
+  .site-title {
+    font-size: 2.4em;
+    margin-bottom: 5px;
+  }
+}
+.site-qr {
+  margin-top: 10px;
+  table {
+    overflow: hidden;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    background-color: #fff;
+  }
+}
+.site-qr-text {
+  a {
+    display: block;
+    width: 165px;
+    font-size: 10px;
+    text-align: center;
+    padding: 5px;
+  }
+}
+.site-credit {
+  display: block;
+  font-size: 9px;
+  text-transform: uppercase;
+  margin-top: 40px;
+  color: $gray;
+  position: fixed;
+  right: 20px;
+  bottom: 16px;
+  a {
+    &:hover {
+      color: #000;
+    }
+  }
 }

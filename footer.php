@@ -26,17 +26,21 @@
             echo '<p class="site-description">' . $s_description . '</p>';
         }
     ?>
-    <div class="site-credit">
-        <?php _e('Powered by', 'moss'); ?>
-        <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'moss' ) ); ?>" target="_blank">
-            <?php _e('WordPress', 'moss'); ?>
-        </a>
-        <?php _e('and', 'moss'); ?>
-        <a href="<?php echo esc_url( __( 'https://seedthemes.com/', 'moss' ) ); ?>" target="_blank">
-            <?php _e('SeedThemes', 'moss'); ?>
-        </a>
-    </div>
+    <div class="site-qr" id="site-qr" data-url="<?php echo esc_url( home_url( '/' ) ); ?>"></div>
+    <div class="site-qr-text"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php echo esc_url( home_url( '/' ) ); ?></a></div>
 </div>
+
+<div class="site-credit">
+    <?php _e('Proudly powered by', 'moss'); ?>
+    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'moss' ) ); ?>" target="_blank">
+        <?php _e('WordPress', 'moss'); ?>
+    </a>
+    <?php _e('by', 'moss'); ?>
+    <a href="<?php echo esc_url( __( 'https://seedthemes.com/', 'moss' ) ); ?>" target="_blank">
+        <?php _e('SeedThemes', 'moss'); ?>
+    </a>
+</div>
+
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -44,15 +44,16 @@ add_action( 'after_setup_theme', 'moss_content_width', 0 );
 /* Enqueue scripts and styles. */
 function moss_scripts() {
 	
-	wp_enqueue_style('s-mobile', get_theme_file_uri('/css/mobile.css'), array(), '20200316');
-    wp_enqueue_style('s-desktop', get_theme_file_uri('/css/tablet.css'), array(), '20200316', '(min-width: 768px)');
+	wp_enqueue_style('m-mobile', get_theme_file_uri('/css/mobile.css'), array(), '20200316');
+    wp_enqueue_style('m-desktop', get_theme_file_uri('/css/tablet.css'), array(), '20200316', '(min-width: 768px)');
 	
 	if ($GLOBALS['s_style_css'] == 'enable') {
-        wp_enqueue_style('s-style', get_stylesheet_uri());
+        wp_enqueue_style('m-style', get_stylesheet_uri());
     }
 
-	wp_enqueue_script( 's-feather', get_template_directory_uri() . '/js/feather.min.js', array(), '4.24.1', true );
-	wp_enqueue_script( 's-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20200316', true );
+	wp_enqueue_script( 'm-feather', get_template_directory_uri() . '/js/feather.min.js', array(), '4.24.1', true );
+	wp_enqueue_script( 'm-vanillaqr', get_template_directory_uri() . '/js/vanillaqr.min.js', array(), '20190527', true );
+	wp_enqueue_script( 'm-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20200316', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -63,7 +64,7 @@ add_action( 'wp_enqueue_scripts', 'moss_scripts' );
 
 /* Admin CSS */
 function moss_admin_style() {
-    wp_enqueue_style('s-admin-style', get_template_directory_uri() . '/css/wp-admin.css');
+    wp_enqueue_style('m-admin-style', get_template_directory_uri() . '/css/wp-admin.css');
 }
 add_action('admin_enqueue_scripts', 'moss_admin_style');
 
@@ -76,7 +77,7 @@ add_action( 'admin_init', 'moss_add_editor_styles' );
 /* Gutenberg Editor CSS */
 add_action('admin_enqueue_scripts', 'moss_add_gutenberg_assets');
 function moss_add_gutenberg_assets() {
-    wp_enqueue_style('s-gutenberg', get_theme_file_uri('/css/wp-gutenberg.css'), false);
+    wp_enqueue_style('m-gutenberg', get_theme_file_uri('/css/wp-gutenberg.css'), false);
 }
 
 /* Add Category Name to body_class */
