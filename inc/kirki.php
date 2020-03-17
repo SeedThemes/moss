@@ -405,6 +405,43 @@ Kirki::add_field( 'moss', [
 ] );
 
 Kirki::add_field( 'moss', [
+	'type'        => 'multicolor',
+    'settings'    => 'menu_colors',
+    'label'       => esc_html__( 'Colors', 'moss' ),
+    'section'     => 'moss_menu',
+    'priority'    => 10,
+	'alpha' 	=> true,
+    'choices'     => [
+		'background'=> esc_html__( 'Background', 'moss' ),
+        'text'    	=> esc_html__( 'Icon and Text', 'moss' ),
+        'accent'   	=> esc_html__( 'Accent', 'moss' ),
+    ],
+    'default'     => [
+		'background'=> 'rgba(255,255,255,0.8)',
+        'text'    	=> '#878f9d',
+        'accent'   	=> '#0c857e',
+    ],
+	
+	'output' => [
+		[
+			'choice'   => 'background',
+			'element'  => '.site-header',
+			'property' => 'background-color',
+        ],
+		[
+			'choice'   => 'text',
+			'element'  => '.main-navigation a',
+			'property' => 'color',
+        ],
+		[
+			'choice'   => 'accent',
+			'element'  => '.main-navigation a:active, .main-navigation a.active',
+			'property' => 'color',
+        ],
+	],
+] );
+
+Kirki::add_field( 'moss', [
 	'type'        => 'toggle',
 	'settings'    => 'menu_hide_text',
 	'label'       => esc_html__( 'Hide Label?', 'moss' ),
@@ -449,7 +486,7 @@ Kirki::add_field( 'moss', [
         ],
 		[
 			'choice'   => 'accent',
-			'element'  => 'h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
+			'element'  => 'h2 a, h3 a, h4 a',
 			'property' => 'color',
         ],
 		

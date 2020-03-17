@@ -35,7 +35,7 @@
     <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'moss' ) ); ?>" target="_blank">
         <?php _e('WordPress', 'moss'); ?>
     </a>
-    <?php _e('by', 'moss'); ?>
+    <?php _e('&amp;', 'moss'); ?>
     <a href="<?php echo esc_url( __( 'https://seedthemes.com/', 'moss' ) ); ?>" target="_blank">
         <?php _e('SeedThemes', 'moss'); ?>
     </a>
