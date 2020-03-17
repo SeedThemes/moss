@@ -15,6 +15,13 @@
 
     <div class="entry-content">
         <?php
+
+		if ( true == get_theme_mod( 'content_featured_image', true ) ) {
+            echo '<div class="featured_image">';
+            the_post_thumbnail();
+            echo '</div>';
+        }
+		
 		the_content();
 
 		wp_link_pages( array(

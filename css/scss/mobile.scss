@@ -73,9 +73,6 @@ body.admin-bar {
     flex-direction: column;
     justify-content: center;
     color: $nav-color;
-    &:hover {
-      opacity: 0.6;
-    }
     &:active,
     &.active {
       font-weight: bold;
@@ -122,6 +119,11 @@ body.admin-bar {
       color: #000;
     }
   }
+}
+
+/* SINGLE */
+.featured_image {
+  margin: 0 -20px 10px;
 }
 
 .site-info {

@@ -3,5 +3,8 @@ a {
   text-decoration: none;
 }
 body .wp-block {
-  max-width: 420px;
+  max-width: 390px;
+}
+body .wp-block[data-align="wide"] {
+  max-width: 430px;
 }

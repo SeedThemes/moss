@@ -1,23 +1,34 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-single'); ?>>
     <header class="entry-header">
+        <?php moss_post_cat(); ?>
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-        <?php if ( 'post' === get_post_type() ) : ?>
-        <div class="entry-meta">
-            <?php moss_posted_on(); moss_posted_by(); ?>
-        </div>
-        <?php endif; ?>
     </header>
 
     <div class="entry-content">
         <?php
-		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'moss' ),
-			'after'  => '</div>',
-		) );
-		?>
+        if ( true == get_theme_mod( 'content_featured_image', true ) ) {
+            echo '<div class="featured_image">';
+            the_post_thumbnail();
+            echo '</div>';
+        }
+        if ( 'post' === get_post_type() ) : 
+        
+        ?>
+        <div class="entry-meta">
+            <?php moss_posted_on(); moss_posted_by(); ?>
+        </div>
+        <?php 
+        
+        endif; 
+
+        the_content();
+
+        wp_link_pages( array(
+        'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'moss' ),
+            'after' => '</div>',
+        ) );
+        ?>
 
         <?php if($GLOBALS['s_blog_profile'] == 'enable') :?>
         <div class="entry-author">

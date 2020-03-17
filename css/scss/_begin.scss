@@ -44,9 +44,6 @@ a {
   text-decoration: none;
   transition: 0.3s;
   color: $primary;
-  &:hover {
-    color: $primary-hover;
-  }
 }
 figure {
   margin: 0;
@@ -150,7 +147,7 @@ object {
     border-radius: 3px;
     &:hover {
       color: #fff;
-      background-color: $primary-hover;
+      background-color: $primary;
     }
   }
 }
@@ -160,4 +157,12 @@ object {
   border-left: 4px solid #000;
   margin: 0 0 28px;
   padding-left: 1em;
+}
+.wp-block-image {
+  &.alignwide {
+    max-width: calc(100% + 40px);
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+  }
 }

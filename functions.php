@@ -23,10 +23,6 @@ if ( ! function_exists( 'moss_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
-		add_theme_support( 'custom-background', apply_filters( 'moss_custom_background_args', array(
-			'default-color' => 'f2f3f4',
-			'default-image' => '',
-		) ) );
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'custom-logo', array(
 			'height'      => 120,
@@ -34,6 +30,7 @@ if ( ! function_exists( 'moss_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+		add_theme_support('align-wide');
 	}
 endif;
 add_action( 'after_setup_theme', 'moss_setup' );

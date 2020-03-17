@@ -1,7 +1,19 @@
-#accordion-panel-nav_menus,
-#accordion-section-background_image {
+#accordion-panel-nav_menus {
   display: none !important;
 }
 .customize-control-kirki-multicolor .wp-picker-container > .wp-color-result {
   min-height: 24px;
+}
+.wp-picker-container .wp-color-result.button .color-alpha {
+  height: 22px !important;
+}
+#customize-theme-controls {
+  .customize-control-kirki-switch {
+    .switch-off {
+      padding-right: 14px;
+    }
+    .switch-on {
+      padding-left: 14px;
+    }
+  }
 }

@@ -124,7 +124,7 @@ if ( ! function_exists( 'moss_post_thumbnail' ) ) :
 					) ),
 				) );
             } else {
-        		echo '<img src="' . esc_url(get_template_directory_uri()) .'/img/thumb.jpg" alt="'. get_the_title() .'" />';
+        		echo '<img class="wp-post-image -default" src="' . esc_url(get_template_directory_uri()) .'/img/thumb.png" alt="'. get_the_title() .'" />';
             }
 	}
 endif;

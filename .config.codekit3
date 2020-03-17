@@ -41,10 +41,100 @@
 		"oAP": "/comments.php",
 		"oF": 0
 		},
-	"/css": {
+	"/css/mobile.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/mobile-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/mobile.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/mobile.css.map",
+		"oF": 0
+		},
+	"/css/scss": {
 		"ft": 65536,
 		"oA": 1,
-		"oAP": "/build/css",
+		"oAP": "/build/css/scss",
+		"oF": 0
+		},
+	"/css/tablet.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/tablet-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/tablet.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/tablet.css.map",
+		"oF": 0
+		},
+	"/css/wp-admin.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/wp-admin-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/wp-admin.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/wp-admin.css.map",
+		"oF": 0
+		},
+	"/css/wp-editor-style.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/wp-editor-style-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/wp-editor-style.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/wp-editor-style.css.map",
+		"oF": 0
+		},
+	"/css/wp-gutenberg.css": {
+		"aP": 1,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 1,
+		"oAP": "/css/wp-gutenberg-min.css",
+		"oF": 0,
+		"oS": 3
+		},
+	"/css/wp-gutenberg.css.map": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/css/wp-gutenberg.css.map",
 		"oF": 0
 		},
 	"/footer.php": {
@@ -71,15 +161,15 @@
 		"oAP": "/header.php",
 		"oF": 0
 		},
-	"/img/thumb.jpg": {
-		"ft": 16384,
-		"iS": 3875,
-		"jF": 0,
+	"/img/thumb.png": {
+		"ft": 32768,
+		"iS": 215738,
 		"oA": 0,
-		"oAP": "/img/thumb.jpg",
+		"oAP": "/img/thumb.png",
 		"oF": 0,
-		"oIPL": 0,
-		"opt": 0,
+		"oIPL": 1,
+		"opt": 1,
+		"oT": 1,
 		"q": 100
 		},
 	"/inc/customizer.php": {
@@ -174,6 +264,14 @@
 		"hM": 0,
 		"oA": 0,
 		"oAP": "/phpcs.xml.dist",
+		"oF": 0
+		},
+	"/README.html": {
+		"cB": 0,
+		"ft": 8192,
+		"hM": 0,
+		"oA": 0,
+		"oAP": "/README.html",
 		"oF": 0
 		},
 	"/README.md": {

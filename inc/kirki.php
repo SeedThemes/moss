@@ -6,10 +6,18 @@ Kirki::add_config( 'moss', [
 	'capability'    => 'edit_theme_options',
 	'option_type'   => 'theme_mod',
 ] );
-Kirki::add_section( 'menu_icons', [
+Kirki::add_section( 'moss_menu', [
 	'title'          => __( 'Menus' , 'moss'),
 	'panel'          => '',
 	'priority'       => 20,
+	'capability'     => 'edit_theme_options',
+	'theme_supports' => '',
+] );
+
+Kirki::add_section( 'moss_content', [
+	'title'          => __( 'Content' , 'moss'),
+	'panel'          => '',
+	'priority'       => 50,
 	'capability'     => 'edit_theme_options',
 	'theme_supports' => '',
 ] );
@@ -54,7 +62,7 @@ Kirki::add_field( 'moss', [
 Kirki::add_field( 'moss', [
 	'type'        => 'repeater',
 	'label'       => esc_html__( 'Menu', 'moss' ),
-	'section'     => 'menu_icons',
+	'section'     => 'moss_menu',
 	'row_label' => [
 		'type'  => 'field',
 		'value' => esc_html__( 'MENU', 'moss' ),
@@ -400,7 +408,7 @@ Kirki::add_field( 'moss', [
 	'type'        => 'toggle',
 	'settings'    => 'menu_hide_text',
 	'label'       => esc_html__( 'Hide Label?', 'moss' ),
-	'section'     => 'menu_icons',
+	'section'     => 'moss_menu',
 	'default'     => '0',
 ] );
 
@@ -408,59 +416,60 @@ Kirki::add_field( 'moss', [
 
 
 
+/* CONTENT SETTINGS */
 
-/* COLORS */
 Kirki::add_field( 'moss', [
-	'type'        => 'color',
-	'settings'    => 'color_bg',
-	'label'       => esc_html__( 'Mobile Background Color', 'moss' ),
-	'section'     => 'colors',
-	'default'     => '#ffffff',
-	'output' => array(
-		array(
-			'element'  => '.site-mobile',
-			'property' => 'background-color',
-		),
-	),
-] );
-Kirki::add_field( 'moss', [
-    'type'        => 'multicolor',
-    'settings'    => 'color_link',
-    'label'       => esc_html__( 'Text and Link', 'moss' ),
-    'section'     => 'colors',
+	'type'        => 'multicolor',
+    'settings'    => 'content_colors',
+    'label'       => esc_html__( 'Colors', 'moss' ),
+    'section'     => 'moss_content',
     'priority'    => 10,
     'choices'     => [
-		'text'    => esc_html__( 'Text', 'moss' ),
-        'link'    => esc_html__( 'Link', 'moss' ),
-        'hover'   => esc_html__( 'Link: Hover', 'moss' ),
-        'active'  => esc_html__( 'Link: Active', 'moss' ),
+		'background'=> esc_html__( 'Background', 'moss' ),
+        'text'    	=> esc_html__( 'Text', 'moss' ),
+        'accent'   	=> esc_html__( 'Accent', 'moss' ),
+        'link'  	=> esc_html__( 'General Link', 'moss' ),
     ],
     'default'     => [
-		'text'	  => '#242424',
-        'link'    => '#002345',
-        'hover'   => '#005678',
-        'active'  => '#878f9d',
+		'background'=> '#ffffff',
+        'text'    	=> '#1a1a1a',
+        'accent'   	=> '#0c857e',
+        'link'  	=> '#878F9D',
     ],
 	'output' => [
 		[
+			'choice'   => 'background',
+			'element'  => '.site-mobile',
+			'property' => 'background-color',
+        ],
+		[
 			'choice'   => 'text',
-			'element'  => 'body',
+			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a',
 			'property' => 'color',
         ],
+		[
+			'choice'   => 'accent',
+			'element'  => 'h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
+			'property' => 'color',
+        ],
+		
 		[
 			'choice'   => 'link',
 			'element'  => 'a',
 			'property' => 'color',
         ],
-		[
-			'choice'   => 'hover',
-			'element'  => 'a:hover',
-			'property' => 'color',
-        ],
-		[
-			'choice'   => 'active',
-			'element'  => 'a:active',
-			'property' => 'color',
-        ],
+	],
+] );
+
+
+Kirki::add_field( 'moss', [
+	'type'        => 'switch',
+	'settings'    => 'content_featured_image',
+	'label'       => esc_html__( 'Featured Image on Page/Post', 'moss' ),
+	'section'     => 'moss_content',
+	'default'     => '1',
+	'choices'     => [
+		'on'  => esc_html__( 'Show', 'kirki' ),
+		'off' => esc_html__( 'Hide', 'kirki' ),
 	],
 ] );
