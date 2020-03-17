@@ -427,7 +427,7 @@ Kirki::add_field( 'moss', [
     'default'     => [
 		'background'=> 'rgba(255,255,255,0.8)',
         'text'    	=> '#878f9d',
-        'accent'   	=> '#0c857e',
+        'accent'   	=> '#00b9ae',
     ],
 	
 	'output' => [
@@ -478,7 +478,7 @@ Kirki::add_field( 'moss', [
     'default'     => [
 		'background'=> '#ffffff',
         'text'    	=> '#1a1a1a',
-        'accent'   	=> '#0c857e',
+        'accent'   	=> '#00b9ae',
         'link'  	=> '#878F9D',
     ],
 	'output' => [
