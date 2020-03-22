@@ -96,7 +96,24 @@ function moss_body_class($classes) {
     }  
     return $classes;  
 }  
-add_filter('body_class','moss_body_class');  
+add_filter('body_class','moss_body_class'); 
+
+/* Remove "Category: ", "Tag: ", "Taxonomy: " from archive title */
+add_filter('get_the_archive_title', 'moss_get_the_archive_title');
+function moss_get_the_archive_title($title) {
+    if (is_category()) {
+        $title = single_cat_title('<i data-feather="folder"></i> ', false);
+    } elseif (is_tag()) {
+        $title = single_tag_title('<i data-feather="tag"></i> ', false);
+    } elseif (is_post_type_archive()) {
+        $title = post_type_archive_title('', false);
+    } elseif (is_author()) {
+        $title = '<i data-feather="user"></i> <span class="vcard">' . get_the_author() . '</span>';
+    } elseif (is_tax()) {
+        $title = single_term_title('', false);
+    }
+    return $title;
+}
 
 
 /* Custom template tags */
