@@ -161,7 +161,7 @@ if ( ! function_exists( 'moss_menus' ) ) :
 			} else {
 				$nav_path = get_permalink( $setting['menu_page_id'] );
 				if ($setting['menu_page_id'] == get_option( 'page_for_posts' )) {
-					$active_class = array('blog', 'single');
+					$active_class = array('blog', 'single', 'category' , 'tag', 'author');
 				} else {
 					$active_class[] = 'root-id-' . $setting['menu_page_id'];
 				}
