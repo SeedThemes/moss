@@ -393,6 +393,22 @@ Kirki::add_field( 'moss', [
 /* COLORS SETTINGS */
 
 Kirki::add_field( 'moss', [
+	'type'        => 'color',
+	'settings'    => 'color_accent',
+	'label'       => __( 'Accent Color', 'moss' ),
+	'section'     => 'colors',
+	'default'     => '#00b9ae',
+	'output' => [
+		[
+			'element'  => 'h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
+			'property' => 'color',
+        ],
+	],
+] );
+
+
+/*
+Kirki::add_field( 'moss', [
 	'type'        => 'multicolor',
     'settings'    => 'colors',
     'label'       => esc_html__( 'Colors', 'moss' ),
@@ -434,7 +450,7 @@ Kirki::add_field( 'moss', [
         ],
 	],
 ] );
-
+*/
 
 Kirki::add_field( 'moss', [
 	'type'        => 'switch',
