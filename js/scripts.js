@@ -21,7 +21,9 @@ function init() {
 
 /* SWUP */
 init();
-const swup = new Swup();
+const swup = new Swup({
+  plugins: [new SwupBodyClassPlugin()]
+});
 swup.on("contentReplaced", init);
 
 /* QR Code */

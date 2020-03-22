@@ -26,8 +26,8 @@ if (is_front_page()) {
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-        <header>
-            <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+        <header id="top" class="site-top">
+            <h1 class="page-title"><?php single_post_title(); ?></h1>
         </header>
         <?php
 			endif;

@@ -54,6 +54,7 @@ function moss_scripts() {
 	wp_enqueue_script( 'm-feather', get_template_directory_uri() . '/js/feather.min.js', array(), '4.24.1', true );
 	wp_enqueue_script( 'm-vanillaqr', get_template_directory_uri() . '/js/vanillaqr.min.js', array(), '20190527', true );
 	wp_enqueue_script( 'm-swup', get_template_directory_uri() . '/js/swup.min.js', array(), '2.0.9', true );
+	wp_enqueue_script( 'm-swup-body', get_template_directory_uri() . '/js/swupbodyclass.min.js', array(), '2.0.9', true );
 	wp_enqueue_script( 'm-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20200316', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -81,17 +82,22 @@ function moss_add_gutenberg_assets() {
     wp_enqueue_style('m-gutenberg', get_theme_file_uri('/css/wp-gutenberg.css'), false);
 }
 
-/* Add Category Name to body_class */
-add_filter('body_class','moss_add_category_to_single');
-function moss_add_category_to_single($classes) {
-if (is_single() ) {
-	global $post;
-	foreach((get_the_category($post->ID)) as $category) {
-		$classes[] = 'category-' . $category->category_nicename;
-	}
-}
-return $classes;
-}
+/* Add Ancestor Page ID to body_class */
+function moss_body_class($classes) {  
+    global $post;  
+    if (is_page()) {  
+        if ($post->post_parent) {  
+			$ancestors = get_post_ancestors($post->ID);
+            $parent  = end($ancestors);  
+        } else {  
+            $parent = $post->ID;  
+        }  
+        $classes[] = 'root-id-' . $parent;  
+    }  
+    return $classes;  
+}  
+add_filter('body_class','moss_body_class');  
+
 
 /* Custom template tags */
 require get_template_directory() . '/inc/template-tags.php';

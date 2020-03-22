@@ -13,14 +13,14 @@ Kirki::add_section( 'moss_menu', [
 	'capability'     => 'edit_theme_options',
 	'theme_supports' => '',
 ] );
-
-Kirki::add_section( 'moss_content', [
-	'title'          => __( 'Content' , 'moss'),
+Kirki::add_section( 'moss_etc', [
+	'title'          => __( 'Advance Settings' , 'moss'),
 	'panel'          => '',
-	'priority'       => 50,
+	'priority'       => 90,
 	'capability'     => 'edit_theme_options',
 	'theme_supports' => '',
 ] );
+
 
 /* SITE IDENTITY */
 Kirki::add_field( 'moss', [
@@ -48,28 +48,11 @@ Kirki::add_field( 'moss', [
 
 
 
-
-
-
 /* MENU ICONS */
-
-/* will support soon
-Kirki::add_field( 'moss', [
-	'type'        => 'radio-buttonset',
-	'settings'    => 'menu_type',
-	'label'       => esc_html__( 'Style', 'moss' ),
-	'section'     => 'menu_icons',
-	'default'     => 'icon',
-	'choices'     => [
-		'icon'   => esc_html__( 'Icon', 'moss' ),
-		'image' => esc_html__( 'Image', 'moss' ),
-	],
-] );
-*/
-
 Kirki::add_field( 'moss', [
 	'type'        => 'repeater',
 	'label'       => esc_html__( 'Menu', 'moss' ),
+	'settings'     => 'moss_menu_page',
 	'section'     => 'moss_menu',
 	'row_label' => [
 		'type'  => 'field',
@@ -77,21 +60,17 @@ Kirki::add_field( 'moss', [
 		'field' => 'menu_label',
 	],
 	'button_label' => esc_html__('Add New Menu', 'moss' ),
-	'settings'     => 'menu_icon_repeater',
 	'default'      => [
 		[
 			'menu_icon' 		=> 'home',
 			'menu_label'  		=> esc_html__( 'Home', 'moss' ),
-			'menu_url'  		=> '/',
-			'menu_active_class' => ''
+			'menu_page_id'  	=> 0,
 		],
 		[
 			'menu_icon' 		=> 'info',
 			'menu_label'  		=> esc_html__( 'About', 'moss' ),
-			'menu_url'  		=> '/sample-page/',
-			'menu_active_class' => ''
+			'menu_page_id'  	=> 2,
 		],
-
 	],
 	'fields' => [
 		'menu_icon' => [
@@ -388,64 +367,14 @@ Kirki::add_field( 'moss', [
 			'label'       => esc_html__( 'Label', 'moss' ),
 			'default'     => '',
 		],
-		'menu_url'  => [
-			'type'        => 'text',
-			'label'       => esc_html__( 'URL', 'moss' ),
+		'menu_page_id'  => [
+			'type'        => 'dropdown-pages',
+			'label'       => esc_html__( 'Page', 'moss' ),
 			'default'     => '',
 		],
-		'menu_active_class' => [
-			'type'        => 'text',
-			'label'       => esc_html__( 'Active Body Class (Optional)', 'moss' ),
-			'default'     => '',
-		],
-		
 	],
 	'choices' => [
 		'limit' => 5
-	],
-	'active_callback' => [
-		[
-			'setting'  => 'menu_type',
-			'operator' => '==',
-			'value'    => 'icon',
-		]
-	],
-] );
-
-Kirki::add_field( 'moss', [
-	'type'        => 'multicolor',
-    'settings'    => 'menu_colors',
-    'label'       => esc_html__( 'Colors', 'moss' ),
-    'section'     => 'moss_menu',
-    'priority'    => 10,
-	'alpha' 	=> true,
-    'choices'     => [
-		'background'=> esc_html__( 'Background', 'moss' ),
-        'text'    	=> esc_html__( 'Icon and Text', 'moss' ),
-        'accent'   	=> esc_html__( 'Accent', 'moss' ),
-    ],
-    'default'     => [
-		'background'=> 'rgba(255,255,255,0.8)',
-        'text'    	=> '#878f9d',
-        'accent'   	=> '#00b9ae',
-    ],
-	
-	'output' => [
-		[
-			'choice'   => 'background',
-			'element'  => '.site-header',
-			'property' => 'background-color',
-        ],
-		[
-			'choice'   => 'text',
-			'element'  => '.main-navigation a',
-			'property' => 'color',
-        ],
-		[
-			'choice'   => 'accent',
-			'element'  => '.main-navigation a:active, .main-navigation a.active',
-			'property' => 'color',
-        ],
 	],
 ] );
 
@@ -461,13 +390,13 @@ Kirki::add_field( 'moss', [
 
 
 
-/* CONTENT SETTINGS */
+/* COLORS SETTINGS */
 
 Kirki::add_field( 'moss', [
 	'type'        => 'multicolor',
-    'settings'    => 'content_colors',
+    'settings'    => 'colors',
     'label'       => esc_html__( 'Colors', 'moss' ),
-    'section'     => 'moss_content',
+    'section'     => 'colors',
     'priority'    => 10,
     'choices'     => [
 		'background'=> esc_html__( 'Background', 'moss' ),
@@ -511,7 +440,7 @@ Kirki::add_field( 'moss', [
 	'type'        => 'switch',
 	'settings'    => 'content_featured_image',
 	'label'       => esc_html__( 'Featured Image on Page/Post', 'moss' ),
-	'section'     => 'moss_content',
+	'section'     => 'moss_etc',
 	'default'     => '1',
 	'choices'     => [
 		'on'  => esc_html__( 'Show', 'kirki' ),

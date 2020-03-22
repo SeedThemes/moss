@@ -135,48 +135,44 @@ if ( ! function_exists( 'moss_menus' ) ) :
 	 * Displays menus with icons from Kirki.
 	 */
 	function moss_menus() {
-		global $wp;
-		if ($wp->request) {
-			$path = '/' . $wp->request . '/';
-		} else {
-			$path = '/';
-		}
 		$defaults = [
-						[
-							'menu_icon' => 'home',
-							'menu_label'  => esc_html__( 'Home', 'moss' ),
-							'menu_url'  => '/',
-							'menu_active_class' => 'home',
-						],
+			[
+				'menu_icon' => 'home',
+				'menu_label'  => esc_html__( 'Home', 'moss' ),
+				'menu_page_id'  => 0,
+			],
+			[
+				'menu_icon' => 'info',
+				'menu_label'  => esc_html__( 'About', 'moss' ),
+				'menu_page_id'  => 2,
+			],
+		];
+		$settings = get_theme_mod( 'moss_menu_page', $defaults );
 
-						[
-							'menu_icon' => 'info',
-							'menu_label'  => esc_html__( 'About', 'moss' ),
-							'menu_url'  => '/sample-page/',
-							'menu_active_class' => '',
-						],
-
-					];
-		$settings = get_theme_mod( 'menu_icon_repeater', $defaults );
-
-		
 		echo '<nav id="site-navigation" class="main-navigation -i' . count($settings) . '">';
 
 		foreach( $settings as $setting ) {
-			$nav_path = parse_url($setting['menu_url'], PHP_URL_PATH);
 			$nav_class = 'm-item';
-			$active_class = trim($setting['menu_active_class']);
+			$active_class = array();
 
-			if ($active_class) {
-				$body_classes = get_body_class();
-				if (in_array($active_class,$body_classes)) {
-					$nav_class .= ' active';
-				} 
+			if ($setting['menu_page_id'] == 0) {
+				$nav_path = get_home_url();
+				$active_class[] = 'home';
+			} else {
+				$nav_path = get_permalink( $setting['menu_page_id'] );
+				if ($setting['menu_page_id'] == get_option( 'page_for_posts' )) {
+					$active_class = array('blog', 'single');
+				} else {
+					$active_class[] = 'root-id-' . $setting['menu_page_id'];
+				}
 			}
-			if ($path == $nav_path) {
+			
+			/* Check if $active_class is in Body Class */
+			if(count(array_intersect($active_class, get_body_class())) > 0){
 				$nav_class .= ' active';
-			}
-			echo '<a href="' . $setting['menu_url'] . '" class="' . $nav_class .'">';
+ 			}
+
+			echo '<a href="' . $nav_path . '" class="' . $nav_class .'">';
 			echo '<i data-feather="'. $setting['menu_icon'] . '"></i>';
 			if (true != get_theme_mod( 'menu_hide_text', false ) ) {
 				echo '<span>' . $setting['menu_label'] . '</span>';
