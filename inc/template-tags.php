@@ -21,6 +21,21 @@ if ( ! function_exists( 'moss_post_cat' ) ) :
 	}
 endif;
 
+if ( ! function_exists( 'moss_post_cats' ) ) :
+	/**
+	 * Prints Category Links.
+	 */
+	function moss_post_cats() {
+		if ( 'post' === get_post_type() ) {
+			$categories_list = get_the_category_list( esc_html__( ', ', 'moss' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				printf( '<span class="cat-links"><i data-feather="folder"></i>' . esc_html__( '%1$s', 'moss' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			}
+		}
+	}
+endif;
+
 if ( ! function_exists( 'moss_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time.
@@ -70,18 +85,7 @@ if ( ! function_exists( 'moss_entry_footer' ) ) :
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function moss_entry_footer() {
-		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$category = get_the_category();
-			if ( count($category) > 1 ) {
-				$categories_list = get_the_category_list( esc_html__( ', ', 'moss' ) );
-				if ( $categories_list ) {
-					/* translators: 1: list of categories. */
-					printf( '<span class="cat-links"><i data-feather="folder"></i>' . esc_html__( '%1$s', 'moss' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-				}
-			}
-
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'moss' ) );
 			if ( $tags_list ) {
@@ -89,7 +93,6 @@ if ( ! function_exists( 'moss_entry_footer' ) ) :
 				printf( '<span class="tags-links"><i data-feather="tag"></i>' . esc_html__( '%1$s', 'moss' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
-
 		edit_post_link(
 			sprintf(
 				wp_kses(

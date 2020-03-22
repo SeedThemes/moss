@@ -145,10 +145,12 @@ body.admin-bar {
       .custom-logo-link,
       .custom-logo {
         animation: none;
-        animation-name: none;
-        animation-duration: 0s;
-        transition: 0.4s ease-out;
       }
+    }
+    svg {
+      width: 16px;
+      height: 16px;
+      vertical-align: -2px;
     }
   }
   h1 {
@@ -201,39 +203,90 @@ body.admin-bar {
   }
 }
 
+/* ARCHIVE */
+
 .content-item {
   margin-bottom: 20px;
   position: relative;
+  .entry-title {
+    margin-bottom: 10px;
+  }
   .pic {
-    margin: 0 -20px 10px;
+    margin: 0 -20px 15px;
+    line-height: 1px;
     img {
       width: 100%;
     }
   }
 }
 .cat-link {
-  position: absolute;
-  top: 9px;
-  left: -12px;
   font-size: 13px;
+  margin-bottom: 10px;
   a {
-    color: #fff;
-    display: block;
+    display: inline-block;
     padding: 3px 6px;
+    background-color: $primary;
+    color: #fff;
     border-radius: 3px;
-    background-color: rgba(0, 0, 0, 0.5);
-    &:hover {
-      background-color: #fff;
-      color: #000;
+    &:hover,
+    &:active {
+      opacity: 0.5;
     }
   }
 }
+.entry-meta {
+  font-size: 14px;
+  a {
+    opacity: 0.6;
+    &:hover,
+    &:active {
+      opacity: 1;
+    }
+  }
+  svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: -2px;
+  }
+  span {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+.entry-summary {
+  margin-top: 10px;
+}
 
 /* SINGLE */
+.content-single {
+  .entry-meta {
+    margin-bottom: 16px;
+  }
+}
 .featured_image {
-  margin: 0 -20px 10px;
+  margin: 0 -20px 12px;
   img {
     width: 100%;
+  }
+}
+.entry-author {
+  margin: 40px 0 10px;
+  text-align: center;
+  .pic {
+    width: 80px;
+    margin: 0 auto;
+    img {
+      border-radius: 40px;
+    }
+  }
+  .name {
+    font-size: 18px;
+    margin-bottom: 0;
+  }
+  .desc {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 }
 
@@ -245,6 +298,9 @@ body.admin-bar {
 .transition-slide {
   opacity: 1;
   transition: opacity 0.4s cubic-bezier(0.19, 1, 0.22, 1), transform 0.8s cubic-bezier(0.19, 1, 0.22, 1);
+  .site-top {
+    transition: opacity 0.5s cubic-bezier(0.19, 1, 0.22, 1), transform 1s cubic-bezier(0.19, 1, 0.22, 1);
+  }
 }
 html.is-animating {
   .transition-fade {
@@ -253,9 +309,13 @@ html.is-animating {
   .transition-slide {
     opacity: 0;
     transform: translate3d(0, 10px, 0);
+    .site-top {
+      transform: translate3d(0, -14px, 0);
+    }
   }
 }
 
+/* SITE INFO */
 .site-info,
 .site-credit {
   display: none;
