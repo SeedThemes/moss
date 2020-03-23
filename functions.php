@@ -93,7 +93,8 @@ function moss_body_class($classes) {
             $parent = $post->ID;  
         }  
         $classes[] = 'root-id-' . $parent;  
-    }  
+    }
+	$classes[] = get_theme_mod( 'color_mode', 'light' ) . '-mode';
     return $classes;  
 }  
 add_filter('body_class','moss_body_class'); 

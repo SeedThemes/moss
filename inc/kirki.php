@@ -419,7 +419,7 @@ Kirki::add_field( 'moss', [
 	'priority'    => 10,
 	'choices'     => [
 		'light'   => esc_html__( 'Light', 'moss' ),
-		'dark' => esc_html__( 'Dark', 'moss' ),
+		'dark'    => esc_html__( 'Dark', 'moss' ),
 	],
 ] );
 
