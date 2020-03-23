@@ -44,7 +44,19 @@ ol,
 ul {
   padding-left: 1em;
 }
-
+input {
+  font-size: 16px;
+}
+input[type="button"],
+input[type="submit"] {
+  background-color: $primary;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 img {
   max-width: 100%;
   height: auto;

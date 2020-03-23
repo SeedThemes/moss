@@ -375,3 +375,72 @@ html.is-animating {
 .site-credit {
   display: none;
 }
+
+/* WP COMMENTS */
+.comment-list {
+  list-style: none;
+  margin-bottom: 20px;
+  padding: 0;
+  border: 1px solid $line;
+  border-bottom: none;
+  .comment {
+    border-bottom: 1px solid $line;
+    padding: 25px;
+    background-color: $line;
+  }
+  .vcard {
+    img.avatar {
+      float: left;
+      margin: 5px 12px 0 0;
+    }
+    .says {
+      display: none;
+    }
+  }
+  .comment-metadata {
+    font-size: 0.8em;
+    line-height: 1.4em;
+    &:after {
+      content: "";
+      clear: both;
+      display: block;
+      margin-bottom: 15px;
+    }
+    a {
+      opacity: 0.8;
+    }
+  }
+  .children {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    .comment {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+}
+.comment-respond {
+  margin-top: 20px;
+  label {
+    display: block;
+    margin: 0;
+  }
+}
+.comment-form-comment {
+  margin-bottom: 10px;
+  textarea {
+    padding: 10px;
+    width: 100%;
+    border: 1px solid #ccc;
+  }
+}
+.comment-form-author,
+.comment-form-email,
+.comment-form-url {
+  input {
+    width: 100%;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+  }
+}

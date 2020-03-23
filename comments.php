@@ -13,7 +13,7 @@
 /*
  * Disabled by SeedThemes. We don't recommend using WordPress comments.
  */
-if ($GLOBALS['s_wp_comments'] != 'enable') {
+if (!get_theme_mod( 'enable_wp_comments', false ) ) {
 	return;
 }
 

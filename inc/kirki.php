@@ -396,7 +396,7 @@ Kirki::add_field( 'moss', [
 			'property' => 'color',
         ],
 		[
-			'element'  => '._accent_bg, .cat-link a',
+			'element'  => '._accent_bg, .cat-link a, input[type="submit"]',
 			'property' => 'background-color',
         ],
 	],
@@ -444,7 +444,7 @@ Kirki::add_field( 'moss', [
         ],
 		[
 			'choice'   => 'background',
-			'element'  => '._accent_bg, .cat-link a',
+			'element'  => '._accent_bg, .cat-link a, input[type="submit"]',
 			'property' => 'color',
         ],
 		
@@ -489,7 +489,7 @@ Kirki::add_field( 'moss', [
         ],
 		[
 			'choice'   => 'background',
-			'element'  => '._accent_bg, .cat-link a',
+			'element'  => '._accent_bg, .cat-link a, input[type="submit"]',
 			'property' => 'color',
         ],
 		[
@@ -520,6 +520,14 @@ Kirki::add_field( 'moss', [
 	'settings'    => 'enable_swup',
 	'label'       => esc_html__( 'Enable Page Transition?', 'moss' ),
 	'description' => esc_html__( 'Using Swup.js.org to change the way website load. Not compatible with most plugins.', 'moss' ),
+	'section'     => 'moss_advance',
+	'default'     => '0',
+] );
+Kirki::add_field( 'moss', [
+	'type'        => 'toggle',
+	'settings'    => 'enable_wp_comments',
+	'label'       => esc_html__( 'Enable WordPress Comments?', 'moss' ),
+	'description' => esc_html__( 'WordPress Comments catch a lot of spam. Not recommend to use.', 'moss' ),
 	'section'     => 'moss_advance',
 	'default'     => '0',
 ] );
