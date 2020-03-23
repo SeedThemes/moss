@@ -23,24 +23,35 @@
   .site-title {
     font-size: 2.2em;
     margin-bottom: 2px;
+    a {
+      color: $text;
+    }
+  }
+  a {
+    color: $gray;
   }
 }
 .site-qr {
   margin-top: 10px;
-  table {
-    overflow: hidden;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  width: 132px;
+  height: 132px;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #fff;
+  canvas {
+    height: 150px;
+    width: 150px;
   }
 }
 .site-qr-text {
   a {
     display: block;
-    width: 165px;
+    margin-top: 10px;
+    width: 132px;
     font-size: 10px;
     text-align: center;
-    padding: 5px;
+    white-space: nowrap;
   }
 }
 .site-credit {
@@ -53,6 +64,7 @@
   right: 20px;
   bottom: 18px;
   a {
+    color: $gray;
     &:hover {
       color: #000;
     }

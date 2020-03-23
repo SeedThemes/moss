@@ -400,57 +400,119 @@ Kirki::add_field( 'moss', [
 	'default'     => '#00b9ae',
 	'output' => [
 		[
-			'element'  => 'h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
+			'element'  => 'a, h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
 			'property' => 'color',
+        ],
+		[
+			'element'  => '.cat-link a',
+			'property' => 'background-color',
         ],
 	],
 ] );
 
+Kirki::add_field( 'moss', [
+	'type'        => 'radio-buttonset',
+	'settings'    => 'color_mode',
+	'label'       => esc_html__( 'Mode', 'moss' ),
+	'section'     => 'colors',
+	'default'     => 'light',
+	'priority'    => 10,
+	'choices'     => [
+		'light'   => esc_html__( 'Light', 'moss' ),
+		'dark' => esc_html__( 'Dark', 'moss' ),
+	],
+] );
 
-/*
+
 Kirki::add_field( 'moss', [
 	'type'        => 'multicolor',
-    'settings'    => 'colors',
-    'label'       => esc_html__( 'Colors', 'moss' ),
+    'settings'    => 'color_light',
+    'label'       => esc_html__( 'Light Mode', 'moss' ),
+    'section'     => 'colors',
+    'priority'    => 10,
+	'alpha' 	  => true,
+    'choices'     => [
+        'text'    	=> esc_html__( 'Text', 'moss' ),
+		'background'=> esc_html__( 'Background', 'moss' ),
+    ],
+    'default'     => [
+        'text'    	=> '#1a1a1a',
+		'background'=> 'rgba(255,255,255,0.8);',
+    ],
+	'output' => [
+		[
+			'choice'   => 'text',
+			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a, .main-navigation a',
+			'property' => 'color',
+        ],
+		[
+			'choice'   => 'background',
+			'element'  => '.site-mobile, .site-header, .site-top',
+			'property' => 'background-color',
+        ],
+		
+	],
+	'active_callback' => [
+		[
+			'setting'  => 'color_mode',
+			'operator' => '==',
+			'value'    => 'light',
+		]
+	],
+] );
+
+Kirki::add_field( 'moss', [
+	'type'        => 'multicolor',
+    'settings'    => 'color_dark',
+    'label'       => esc_html__( 'Dark Mode', 'moss' ),
     'section'     => 'colors',
     'priority'    => 10,
     'choices'     => [
-		'background'=> esc_html__( 'Background', 'moss' ),
         'text'    	=> esc_html__( 'Text', 'moss' ),
-        'accent'   	=> esc_html__( 'Accent', 'moss' ),
-        'link'  	=> esc_html__( 'General Link', 'moss' ),
+		'background'=> esc_html__( 'Body Background', 'moss' ),
+		'head_bg'	=> esc_html__( 'Head Background', 'moss' ),
+		'nav_bg'	=> esc_html__( 'Bottom Background', 'moss' ),
     ],
     'default'     => [
-		'background'=> '#ffffff',
-        'text'    	=> '#1a1a1a',
-        'accent'   	=> '#00b9ae',
-        'link'  	=> '#878F9D',
+        'text'    	=> '#ffffff',
+		'background'=> '#242424;',
+		'head_bg'	=> 'rgba(0,0,0,0.8);',
+		'nav_bg'	=> 'rgba(0,0,0,0.8);',
     ],
 	'output' => [
+		[
+			'choice'   => 'text',
+			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a, .main-navigation a',
+			'property' => 'color',
+        ],
 		[
 			'choice'   => 'background',
 			'element'  => '.site-mobile',
 			'property' => 'background-color',
         ],
 		[
-			'choice'   => 'text',
-			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a',
-			'property' => 'color',
+			'choice'   => 'head_bg',
+			'element'  => '.site-top',
+			'property' => 'background-color',
         ],
 		[
-			'choice'   => 'accent',
-			'element'  => 'h2 a, h3 a, h4 a',
-			'property' => 'color',
+			'choice'   => 'nav_bg',
+			'element'  => '.site-header',
+			'property' => 'background-color',
         ],
 		
+	],
+	'active_callback' => [
 		[
-			'choice'   => 'link',
-			'element'  => 'a',
-			'property' => 'color',
-        ],
+			'setting'  => 'color_mode',
+			'operator' => '==',
+			'value'    => 'dark',
+		]
 	],
 ] );
-*/
+
+
+/* ADVANCE SETTINGS */
 
 Kirki::add_field( 'moss', [
 	'type'        => 'switch',
