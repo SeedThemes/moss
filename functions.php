@@ -54,7 +54,6 @@ function moss_scripts() {
 	wp_enqueue_script( 'm-feather', get_template_directory_uri() . '/js/feather.min.js', array(), '4.24.1', true );
 	wp_enqueue_script( 'm-vanillaqr', get_template_directory_uri() . '/js/vanillaqr.min.js', array(), '20190527', true );
 	wp_enqueue_script( 'm-swup', get_template_directory_uri() . '/js/swup.min.js', array(), '2.0.9', true );
-	wp_enqueue_script( 'm-swup-body', get_template_directory_uri() . '/js/swupbodyclass.min.js', array(), '2.0.9', true );
 	wp_enqueue_script( 'm-scripts', get_template_directory_uri() . '/js/scripts.js', array(), '20200316', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
