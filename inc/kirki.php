@@ -13,7 +13,7 @@ Kirki::add_section( 'moss_menu', [
 	'capability'     => 'edit_theme_options',
 	'theme_supports' => '',
 ] );
-Kirki::add_section( 'moss_etc', [
+Kirki::add_section( 'moss_advance', [
 	'title'          => __( 'Advance Settings' , 'moss'),
 	'panel'          => '',
 	'priority'       => 90,
@@ -36,14 +36,6 @@ Kirki::add_field( 'moss', [
 	'label'       => esc_html__( 'Align Center?', 'moss' ),
 	'section'     => 'title_tagline',
 	'default'     => '0',
-] );
-Kirki::add_field( 'moss', [
-	'type'        => 'toggle',
-	'settings'    => 'hide_seedthemes_credit',
-	'label'       => esc_html__( 'Hide SeedThemes Credit?', 'moss' ),
-	'section'     => 'title_tagline',
-	'default'     => '0',
-	'priority'    => 100,
 ] );
 
 
@@ -523,3 +515,19 @@ Kirki::add_field( 'moss', [
 
 
 /* ADVANCE SETTINGS */
+Kirki::add_field( 'moss', [
+	'type'        => 'toggle',
+	'settings'    => 'enable_swup',
+	'label'       => esc_html__( 'Enable Page Transition?', 'moss' ),
+	'description' => esc_html__( 'Using Swup.js.org to change the way website load. Not compatible with most plugins.', 'moss' ),
+	'section'     => 'moss_advance',
+	'default'     => '0',
+] );
+Kirki::add_field( 'moss', [
+	'type'        => 'toggle',
+	'settings'    => 'hide_seedthemes_credit',
+	'label'       => esc_html__( 'Hide SeedThemes Credit?', 'moss' ),
+	'description' => esc_html__( 'The bottom right of page on desktop.', 'moss' ),
+	'section'     => 'moss_advance',
+	'default'     => '0',
+] );

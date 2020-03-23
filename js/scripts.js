@@ -1,7 +1,6 @@
 function init() {
   /* Feather Icon */
   feather.replace();
-
   /* Header on Scroll */
   let scrollpos = window.scrollY;
   const header = document.getElementById("top");
@@ -20,17 +19,28 @@ function init() {
 
 /* SWUP */
 init();
-const swup = new Swup({
-  plugins: [new SwupBodyClassPlugin()]
-});
-swup.on("contentReplaced", init);
+if (typeof Swup === "function") {
+  const swup = new Swup({
+    plugins: [new SwupBodyClassPlugin()]
+  });
+  swup.on("contentReplaced", init);
+}
 
 /* QR Code */
-var site_qr = document.getElementById("site-qr");
-var url = site_qr.dataset.url;
-var qr = new VanillaQR({
-  url: url,
-  size: 300,
-  toTable: false
+function init_qr() {
+  if (window.innerWidth > 767) {
+    var site_qr = document.getElementById("site-qr");
+    var url = site_qr.dataset.url;
+    var qr = new VanillaQR({
+      url: url,
+      size: 300
+    });
+    site_qr.appendChild(qr.domElement);
+  }
+}
+init_qr();
+window.addEventListener("resize", function() {
+  if (!document.getElementById("site-qr").children[0]) {
+    init_qr();
+  }
 });
-site_qr.appendChild(qr.domElement);
