@@ -30,7 +30,7 @@ var site_qr = document.getElementById("site-qr");
 var url = site_qr.dataset.url;
 var qr = new VanillaQR({
   url: url,
-  size: 200,
-  toTable: true
+  size: 300,
+  toTable: false
 });
 site_qr.appendChild(qr.domElement);
