@@ -63,10 +63,9 @@ function moss_scripts() {
 add_action( 'wp_enqueue_scripts', 'moss_scripts' );
 
 
-/* Admin CSS & JS */
+/* Admin CSS */
 function moss_admin_scripts() {
     wp_enqueue_style('m-admin-style', get_template_directory_uri() . '/css/wp-admin.css');
-	wp_enqueue_script( 'm-admin-scripts', get_template_directory_uri() . '/js/wp-admin.js', array(), '20200316', true );
 }
 add_action('admin_enqueue_scripts', 'moss_admin_scripts');
 
