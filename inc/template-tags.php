@@ -119,9 +119,9 @@ if ( ! function_exists( 'moss_post_thumbnail' ) ) :
 	 * Wraps the post thumbnail in an anchor element on index views, or a div
 	 * element when on single views.
 	 */
-	function moss_post_thumbnail() {
+	function moss_post_thumbnail($size = 'post-thumbnail') {
 		if (has_post_thumbnail()) {
-                the_post_thumbnail( 'post-thumbnail', array(
+                the_post_thumbnail( $size, array(
 					'alt' => the_title_attribute( array(
 					'echo' => false,
 					) ),

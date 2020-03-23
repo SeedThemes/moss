@@ -314,6 +314,29 @@ body.admin-bar {
   }
 }
 
+/* CATALOG */
+.subpage-catalog {
+  display: grid;
+  grid-gap: 16px;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.catalog-item {
+  text-align: center;
+  .title {
+    font-size: 1.125em;
+    margin-bottom: 5px;
+  }
+  .meta {
+    font-size: 0.875em;
+  }
+  .pic {
+    img {
+      width: 100%;
+    }
+  }
+}
+
 /* SWUP */
 .transition-fade {
   opacity: 1;

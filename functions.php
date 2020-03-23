@@ -16,6 +16,7 @@ if ( ! function_exists( 'moss_setup' ) ) :
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size(400, 210, true);
+		add_image_size( 'catalog', 300, 300, true );
 		add_theme_support( 'html5', array(
 			'search-form',
 			'comment-form',
@@ -134,6 +135,11 @@ function moss_register_required_plugins() {
 		array(
 			'name'      => 'Kirki Customizer Framework',
 			'slug'      => 'kirki',
+			'required'  => false,
+		),
+		array(
+			'name'      => 'Advanced Custom Fields',
+			'slug'      => 'advanced-custom-fields',
 			'required'  => false,
 		),
 	);
