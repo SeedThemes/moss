@@ -14,14 +14,26 @@
     <?php moss_site_header(); ?>
 
     <div class="entry-content">
-        <?php
+        <div class="featured-image <?php moss_featured_image_class(); ?>">
+            <?php
+				/* Find Root Page ID */
+				global $post;
+				if ($post->post_parent) {  
+					$ancestors = get_post_ancestors($post->ID);
+					$parent  = end($ancestors);
+					/* Check if using Catalog Page Template */
+					if( 'page-templates/subpage-grid.php' == get_page_template_slug($parent) ) {
+						the_post_thumbnail('full');
+					}
+				} else {
+					the_post_thumbnail();
+				}
+			?>
+        </div>
 
-		if ( true == get_theme_mod( 'content_featured_image', true ) ) {
-            echo '<div class="featured_image">';
-            the_post_thumbnail();
-            echo '</div>';
-        }
-		
+        <div class="_accent"><?php moss_page_meta(); ?></div>
+
+        <?php 
 		the_content();
 
 		wp_link_pages( array(

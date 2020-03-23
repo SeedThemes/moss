@@ -1,28 +1,21 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class('content-single'); ?>>
-    <header id="top" class="site-top entry-header">
+    <header id="top" class="site-top entry-header <?php moss_title_class(); ?>">
         <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
     </header>
 
     <div class="entry-content">
-        <?php
+        <div class="featured-image <?php moss_featured_image_class(); ?>">
+            <?php the_post_thumbnail();?>
+        </div>
 
-        if ( true == get_theme_mod( 'content_featured_image', true ) ) {
-            echo '<div class="featured_image">';
-            the_post_thumbnail();
-            echo '</div>';
-        }
-        if ( 'post' === get_post_type() ) : 
-        
-        ?>
+        <?php if ( 'post' === get_post_type() ) : ?>
         <div class="entry-meta">
             <?php moss_posted_on(); moss_post_cats(); moss_posted_by(); ?>
         </div>
-        <?php 
-        
-        endif; 
+        <?php endif; ?>
 
+        <?php
         the_content();
-
         wp_link_pages( array(
         'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'moss' ),
             'after' => '</div>',

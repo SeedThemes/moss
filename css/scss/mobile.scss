@@ -288,7 +288,7 @@ body.admin-bar {
     margin-bottom: 16px;
   }
 }
-.featured_image {
+.featured-image {
   margin: 0 -20px 12px;
   img {
     width: 100%;
@@ -323,18 +323,26 @@ body.admin-bar {
 }
 .catalog-item {
   text-align: center;
+  .pic {
+    img {
+      width: 100%;
+      border-radius: 5px;
+    }
+  }
   .title {
     font-size: 1.125em;
     margin-bottom: 5px;
   }
-  .meta {
+  .page-meta {
     font-size: 0.875em;
+    margin-bottom: 0;
+    font-weight: normal;
   }
-  .pic {
-    img {
-      width: 100%;
-    }
-  }
+}
+.page-meta {
+  font-size: 1em;
+  font-weight: bold;
+  margin-bottom: 16px;
 }
 
 /* SWUP */

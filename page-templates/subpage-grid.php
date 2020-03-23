@@ -44,11 +44,7 @@ get_header();
 
                 <div class="info">
                     <h2 class="title"><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h2>
-                    <?php 
-						if( class_exists('acf') ) { 
-							echo '<div class="meta">' . get_field('m_meta_text') . '</div>';
-						}
-					?>
+                    <?php moss_page_meta(); ?>
                 </div>
             </div>
             <?php endwhile; ?>

@@ -26,7 +26,7 @@ Kirki::add_section( 'moss_etc', [
 Kirki::add_field( 'moss', [
 	'type'        => 'toggle',
 	'settings'    => 'title_hide',
-	'label'       => esc_html__( 'Hide Site Title?', 'moss' ),
+	'label'       => esc_html__( 'Show Only Logo?', 'moss' ),
 	'section'     => 'title_tagline',
 	'default'     => '0',
 ] );
@@ -400,11 +400,11 @@ Kirki::add_field( 'moss', [
 	'default'     => '#00b9ae',
 	'output' => [
 		[
-			'element'  => 'a, h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
+			'element'  => '._accent, a, h2 a, h3 a, h4 a, .main-navigation a:active, .main-navigation a.active',
 			'property' => 'color',
         ],
 		[
-			'element'  => '.cat-link a',
+			'element'  => '._accent_bg, .cat-link a',
 			'property' => 'background-color',
         ],
 	],
@@ -442,13 +442,18 @@ Kirki::add_field( 'moss', [
 	'output' => [
 		[
 			'choice'   => 'text',
-			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a, .main-navigation a',
+			'element'  => '.site-mobile, h1 a, .site-title a, .entry-meta a, .main-navigation a,',
 			'property' => 'color',
         ],
 		[
 			'choice'   => 'background',
 			'element'  => '.site-mobile, .site-header, .site-top',
 			'property' => 'background-color',
+        ],
+		[
+			'choice'   => 'background',
+			'element'  => '._accent_bg, .cat-link a',
+			'property' => 'color',
         ],
 		
 	],
@@ -491,6 +496,11 @@ Kirki::add_field( 'moss', [
 			'property' => 'background-color',
         ],
 		[
+			'choice'   => 'background',
+			'element'  => '._accent_bg, .cat-link a',
+			'property' => 'color',
+        ],
+		[
 			'choice'   => 'head_bg',
 			'element'  => '.site-top',
 			'property' => 'background-color',
@@ -513,15 +523,3 @@ Kirki::add_field( 'moss', [
 
 
 /* ADVANCE SETTINGS */
-
-Kirki::add_field( 'moss', [
-	'type'        => 'switch',
-	'settings'    => 'content_featured_image',
-	'label'       => esc_html__( 'Featured Image on Page/Post', 'moss' ),
-	'section'     => 'moss_etc',
-	'default'     => '1',
-	'choices'     => [
-		'on'  => esc_html__( 'Show', 'moss' ),
-		'off' => esc_html__( 'Hide', 'moss' ),
-	],
-] );

@@ -121,14 +121,57 @@ if ( ! function_exists( 'moss_post_thumbnail' ) ) :
 	 */
 	function moss_post_thumbnail($size = 'post-thumbnail') {
 		if (has_post_thumbnail()) {
-                the_post_thumbnail( $size, array(
-					'alt' => the_title_attribute( array(
-					'echo' => false,
-					) ),
-				) );
-            } else {
-        		echo '<img class="wp-post-image -default" src="' . esc_url(get_template_directory_uri()) .'/img/thumb.png" alt="'. get_the_title() .'" />';
-            }
+			the_post_thumbnail( $size, array(
+				'alt' => the_title_attribute( array(
+				'echo' => false,
+				) ),
+			) );
+		} else {
+			echo '<img class="wp-post-image -default" src="' . esc_url(get_template_directory_uri()) .'/img/thumb.png" alt="'. get_the_title() .'" />';
+		}
+	}
+endif;
+
+if ( ! function_exists( 'moss_featured_image_class' ) ) :
+	/**
+	 * Displays Class for Featured Image
+	 */
+	function moss_featured_image_class() {
+		if( class_exists('acf') ) { 
+			if( NULL === get_field('m_featured_image') || get_field('m_featured_image')) {
+				echo '_show';
+			} else {
+				echo '_hide';
+			}
+		}
+	}
+endif;
+
+if ( ! function_exists( 'moss_title_class' ) ) :
+	/**
+	 * Displays Class for .site-top
+	 */
+	function moss_title_class() {
+		if( class_exists('acf') ) { 
+			if( NULL === get_field('m_title') || get_field('m_title')) {
+				echo '_show';
+			} else {
+				echo '_hide';
+			}
+		}
+	}
+endif;
+
+if ( ! function_exists( 'moss_page_meta' ) ) :
+	/**
+	 * Displays meta field from ACF
+	 */
+	function moss_page_meta() {
+		if( class_exists('acf') ) { 
+			if(get_field('m_meta_text')) {
+				echo '<div class="page-meta">' . get_field('m_meta_text') . '</div>';
+			}
+		}
 	}
 endif;
 
@@ -194,12 +237,14 @@ if ( ! function_exists( 'moss_site_brand' ) ) :
 	function moss_site_brand() {
 		$classes = '';
 		if ( true == get_theme_mod( 'title_hide', false ) ) {
-			$classes = ' -hide-title';
+			$classes = '-hide-title';
 		}
 		if ( true == get_theme_mod( 'title_align_center', false ) ) {
 			$classes .= ' -center';
 		}
-		echo '<header id="top" class="site-top' . $classes . '">';
+		echo '<header id="top" class="site-top ';
+		moss_title_class();
+		echo ' ' .$classes . '">';
 		echo '<div class="brand">';
 		the_custom_logo();
 		echo '<h1 class="site-title"><a href="' . esc_url( home_url( '/' ) ) . '"  rel="home">' . get_bloginfo( 'name' ) . '</a></h1>';
@@ -211,13 +256,15 @@ endif;
 
 if ( ! function_exists( 'moss_site_header' ) ) :
 	/**
-	 * Displays menus with icons from Kirki.
+	 * Displays Title or Brand on Page
 	 */
 	function moss_site_header() {
 		if (is_front_page()) {
 			moss_site_brand();
 		} else {
-			echo '<header id="top" class="site-top entry-header">';
+			echo '<header id="top" class="site-top entry-header ';
+			moss_title_class();
+			echo '">';
 			the_title( '<h1 class="entry-title">', '</h1>' );
 			echo '</header>';
 		}
