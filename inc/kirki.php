@@ -459,7 +459,7 @@ Kirki::add_field( 'moss', [
 	'section'     => 'moss_etc',
 	'default'     => '1',
 	'choices'     => [
-		'on'  => esc_html__( 'Show', 'kirki' ),
-		'off' => esc_html__( 'Hide', 'kirki' ),
+		'on'  => esc_html__( 'Show', 'moss' ),
+		'off' => esc_html__( 'Hide', 'moss' ),
 	],
 ] );
