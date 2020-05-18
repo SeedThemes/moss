@@ -4,8 +4,8 @@ Contributors: seedthemes, automattic
 Tags: custom-background, custom-logo, featured-images, translation-ready
 
 Requires at least: 4.5
-Tested up to: 4.8
-Stable tag: 0.1.0
+Tested up to: 5.4
+Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -26,8 +26,16 @@ Description
 
 == Changelog ==
 
-= 1.0 - May 16 2020 =
+= 1.0.0 - May 18 2020 =
+* Fix: Thai title line-height.
+
+= 0.1.0 - Mar 24 2020 =
 * Initial release
 
 == Credits ==
-* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* Design & Develop by [SeedThemes.com](https://seedthemes.com/)
+* Code based on [Underscores](https://underscores.me/), Automattic, Inc.
+* Icon by [Feather Icons](https://feathericons.com/)
+* Page transition by [Swup](https://swup.js.org/)
+* QR Code Generator by [VanillaQR](https://github.com/chuckfairy/VanillaQR.js)
