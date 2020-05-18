@@ -157,7 +157,8 @@ body.admin-bar {
   h1 {
     font-size: 1.8em;
     margin: auto 0 0;
-    padding-bottom: 16px;
+    padding: 4px 0 16px;
+    line-height: 1.5;
     transition: 0.5s ease-out;
     white-space: nowrap;
     overflow: hidden;
